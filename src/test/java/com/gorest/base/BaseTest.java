@@ -7,8 +7,10 @@ import com.gorest.pojo.User;
 import com.gorest.utils.LogUtility;
 import com.gorest.utils.RestAssuredUtility;
 import com.gorest.utils.TestDataUtility;
+import com.gorest.reporting.ExtentReportListener;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.Listeners;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,6 +25,7 @@ import static org.hamcrest.Matchers.is;
  * <p>Boots REST Assured once per suite and offers the small set of helpers tests need
  * for their fixtures: create a user, find an existing user, clean up afterwards.</p>
  */
+@Listeners(ExtentReportListener.class)
 public class BaseTest {
 
     /** Users created by the running test class, deleted in {@link #cleanUpCreatedUsers()}. */

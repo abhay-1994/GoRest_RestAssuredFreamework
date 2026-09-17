@@ -16,6 +16,7 @@ The test classes in `src/test/java` stay thin and read as plain
 | HTTP client / DSL  | REST Assured 5.5.0                     |
 | Assertions         | Hamcrest matchers (via REST Assured)   |
 | Test runner        | TestNG 7.10.2                          |
+| Test reporting     | Extent Reports 5.1.2                   |
 | JSON / POJO        | Jackson 2.17.2                         |
 | Schema validation  | rest-assured json-schema-validator     |
 | Build              | Maven (Java 17)                        |
@@ -111,6 +112,7 @@ Reports and logs:
 |-----------------------|-------------------------------------------------|
 | TestNG HTML report    | `target/surefire-reports/index.html`            |
 | Emailable report      | `target/surefire-reports/emailable-report.html` |
+| Extent report         | `target/extent-reports/extent-report.html`      |
 | Request/response log  | `target/logs/api.log`                           |
 
 ---

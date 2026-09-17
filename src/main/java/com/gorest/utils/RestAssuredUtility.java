@@ -3,6 +3,7 @@ package com.gorest.utils;
 import com.gorest.config.ConfigManager;
 import com.gorest.constants.FrameworkConstants;
 import com.gorest.constants.StatusCode;
+import com.gorest.reporting.ExtentRestAssuredFilter;
 import io.restassured.RestAssured;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.builder.ResponseSpecBuilder;
@@ -53,7 +54,10 @@ public final class RestAssuredUtility {
 
         if (ConfigManager.logRequests()) {
             PrintStream logStream = logStream();
-            RestAssured.filters(new RequestLoggingFilter(logStream), new ResponseLoggingFilter(logStream));
+            RestAssured.filters(new RequestLoggingFilter(logStream), new ResponseLoggingFilter(logStream),
+                    new ExtentRestAssuredFilter());
+        } else {
+            RestAssured.filters(new ExtentRestAssuredFilter());
         }
         initialised = true;
         LogUtility.info("REST Assured initialised -> " + RestAssured.baseURI + RestAssured.basePath);
