@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<!-- Full regression suite: mvn test -->
+<suite name="GoREST API Regression Suite" verbose="1">
+
+    <test name="Users - Read">
+        <classes>
+            <class name="com.gorest.tests.GetUserTests"/>
+        </classes>
+    </test>
+
+    <test name="Users - Write">
+        <classes>
+            <class name="com.gorest.tests.CreateUserTests"/>
+            <class name="com.gorest.tests.UpdateUserTests"/>
+            <class name="com.gorest.tests.DeleteUserTests"/>
+        </classes>
+    </test>
+
+    <test name="Users - Negative">
+        <classes>
+            <class name="com.gorest.tests.UnauthorizedAccessTests"/>
+            <class name="com.gorest.tests.UserValidationTests"/>
+        </classes>
+    </test>
+
+    <test name="Posts">
+        <classes>
+            <class name="com.gorest.tests.UserPostTests"/>
+        </classes>
+    </test>
+
+</suite>

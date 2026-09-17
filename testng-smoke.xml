@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<!-- Quick confidence run: mvn test -Psmoke -->
+<suite name="GoREST API Smoke Suite" verbose="1">
+
+    <test name="Smoke">
+        <groups>
+            <run>
+                <include name="smoke"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.gorest.tests.GetUserTests"/>
+            <class name="com.gorest.tests.CreateUserTests"/>
+            <class name="com.gorest.tests.UpdateUserTests"/>
+            <class name="com.gorest.tests.DeleteUserTests"/>
+            <class name="com.gorest.tests.UnauthorizedAccessTests"/>
+            <class name="com.gorest.tests.UserValidationTests"/>
+        </classes>
+    </test>
+
+</suite>

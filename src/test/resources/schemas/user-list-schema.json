@@ -1,0 +1,16 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "GoREST user list",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": ["id", "name", "email", "gender", "status"],
+    "properties": {
+      "id": { "type": "integer" },
+      "name": { "type": "string", "minLength": 1 },
+      "email": { "type": "string", "minLength": 3 },
+      "gender": { "type": "string", "enum": ["male", "female"] },
+      "status": { "type": "string", "enum": ["active", "inactive"] }
+    }
+  }
+}
